@@ -50,9 +50,24 @@ Open the UI csproj file and add the following code under ***Project*** node:
     <Copy SourceFiles="@(PublishFiles)" DestinationFiles="@(PublishFiles->'$(PublishDestination)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="True" />
   </Target>
 ```
+
+#### <i class="icon-pencil"></i> Embed auto generated release notes
+The script copies a folder ***svnlogs*** to the published location.Add the following code to embed release notes into your application:
+  
+```
+<a href="svnlogs\logs.html" target="_blank" style="float:left;">Release Notes</a>
+```
   
 #### <i class="icon-clock"></i> Scheduling the script
 
 Schedule the script using windows task scheduler.Currently svn does not support event subscription, so set the frequency according to your requirements.
 
+#### <i class="icon-pencil"></i> TODO
+
+ - lots of scope for code optimization
+ - make the batch script parameterized
+ - log errors
+ - handle build failures
+
+ 
 
