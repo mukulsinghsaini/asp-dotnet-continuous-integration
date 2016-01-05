@@ -60,6 +60,9 @@ The script copies a folder ***svnlogs*** to the published location.Add the follo
 <a href="svnlogs\logs.html" target="_blank" >Release Notes</a>
 ```
   
+![ScreenShot](https://raw.githubusercontent.com/mukulsinghsaini/images/master/release-notes-by-ci.png)
+
+  
 #### <i class="icon-clock"></i> Scheduling the script
 
 Schedule the script using windows task scheduler.Currently svn does not support event subscription, so set the frequency according to your requirements.
