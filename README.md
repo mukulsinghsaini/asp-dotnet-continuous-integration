@@ -3,9 +3,9 @@ Simple asp.net application continuous integration script
 
 >**Motivation:** Every firm has a different code/build management process. There can be no single solution. Available CI tools provide limited functionality. Batch script based automation provides the flexibility to easily adapt to requirement [(good read on CI)](https://www.thoughtworks.com/continuous-integration)
 
-The script aims to serve as base on which CI process can be built.
+The script aims to serve as light-weight base on which CI process can be built.
 
-The script performs the following tasks to automate app publishing to local filesystem:
+It performs the following tasks to automate app publishing to local filesystem:
 
  1. pulls latest code from SVN repo
  2. build the visual studio solutions
@@ -29,7 +29,7 @@ Modify the batch script **ci.cmd** according to your environment.
 
 ```
 SET svnCheckoutLocation="D:\code\project\dev"
-SET svnRepoUrl="http://git-build:8080/svn/project/Dev" 
+SET svnRepoUrl="http://svn-build:8080/svn/project/Dev" 
 SET stagingLocation="D:\QA\project\stage"
 SET publishLocation="\\ws-qa-server\project"
 SET ideLocation="C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\"
@@ -62,7 +62,7 @@ The script copies a folder ***svnlogs*** to the published location.Add the follo
   
 ![ScreenShot](https://raw.githubusercontent.com/mukulsinghsaini/images/master/release-notes-by-ci.png)
 
-  
+
 #### <i class="icon-clock"></i> Scheduling the script
 
 Schedule the script using windows task scheduler.Currently svn does not support event subscription, so set the frequency according to your requirements.
